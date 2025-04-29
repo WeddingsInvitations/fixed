@@ -1,0 +1,102 @@
+/* Warna Tema */
+:root {
+    --navy: #191970;
+    --light-navy: #3b5998;
+    --grey: #e0e0e0;
+    --white: #ffffff;
+    --black: #000000;
+    --navy-shadow: rgba(25, 25, 112, 0.5);
+    --navy-variant-1: #2e4053;
+    --navy-variant-2: #1c2833;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* Hero Section Styles (akan ditimpa oleh inline styles di HTML untuk tampilan awal) */
+#hero {
+    /* ... (styles akan di HTML) ... */
+}
+
+#hero-content {
+    /* ... (styles akan di HTML) ... */
+}
+
+#open-invitation {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px var(--navy-shadow);
+}
+
+#open-invitation:hover {
+    background-color: var(--light-navy);
+    color: var(--white);
+    box-shadow: 3px 3px 7px var(--navy-shadow);
+}
+
+#countdown {
+    /* ... (styles akan di HTML) ... */
+}
+
+.countdown-item {
+    /* ... (styles akan di HTML) ... */
+}
+
+/* Navbar Styles (akan ditimpa oleh inline styles di HTML untuk tampilan awal) */
+.navbar {
+    /* ... (styles akan di HTML) ... */
+}
+
+.nav-link {
+    /* ... (styles akan di HTML) ... */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--grey);
+}
+
+.nav-link.active {
+    background-color: var(--navy-variant-1);
+    color: var(--white);
+}
+
+.nav-link.active svg {
+    fill: var(--white);
+}
+
+.desktop-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desktop-navbar a {
+    color: var(--navy);
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.desktop-navbar a:hover {
+    color: var(--light-navy);
+}
+
+.desktop-navbar a.active {
+    color: var(--black);
+    font-weight: bold;
+}
+
+.desktop-navbar a.active svg {
+    fill: var(--black);
+}
+
+/* Section Styles */
+.section {
+    /* ... (styles akan di HTML) ... */
+    scroll-margin-top: 50px; /* Untuk offset saat smooth scrolling dengan navbar fixed di
