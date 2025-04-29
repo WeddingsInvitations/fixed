@@ -1,3 +1,4 @@
+/* Reset & Font */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,47 +11,52 @@ html, body {
   font-family: 'Domine', serif;
 }
 
+/* Hero Section */
 .hero {
   background: url('your-background-image.jpg') no-repeat center center/cover;
-  height: 100vh; /* tetap satu layar penuh */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
   position: relative;
   color: white;
 }
 
+/* Overlay untuk efek gelap transparan */
 .overlay {
   background: rgba(0, 0, 50, 0.6);
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
+/* Konten Utama */
 .content {
   text-align: center;
-  transform: translateY(25%); /* diturunkan lebih jauh */
+  position: absolute;
+  bottom: 15vh; /* posisi agar ada 15% ruang dari bawah */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* Teks sambutan */
 .greeting,
 .sub-greeting {
   font-size: 0.9rem;
+  margin-bottom: 2px;
 }
 
+/* Nama tamu */
 .guest-name {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px 0;
 }
 
+/* Subtitle sebelum countdown */
 .subtitle {
   font-size: 1rem;
   margin-bottom: 15px;
 }
 
-/* Countdown lebih kecil */
+/* Countdown Box */
 .countdown {
   display: flex;
   justify-content: center;
@@ -63,7 +69,7 @@ html, body {
   color: navy;
   padding: 6px;
   border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   text-align: center;
   width: 50px;
 }
@@ -78,11 +84,13 @@ html, body {
   margin-top: 2px;
 }
 
+/* Teks akhir sebelum tombol */
 .invitation-text {
   font-size: 0.9rem;
   margin-bottom: 15px;
 }
 
+/* Tombol Buka Undangan */
 .open-button {
   background-color: white;
   color: navy;
@@ -93,7 +101,7 @@ html, body {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease;
 }
 
