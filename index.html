@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Style inline untuk hero agar scroll tersembunyi saat pertama kali tampil */
+        #hero {
+            overflow: hidden;
+            position: relative; /* Untuk positioning elemen di dalamnya */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            min-height: 100vh; /* Set tinggi minimal viewport */
+            background-size: cover;
+            background-position: center;
+        }
+        #hero-content {
+            z-index: 10; /* Agar konten di atas background */
+        }
+        #open-invitation {
+            background-color: rgba(255, 255, 255, 0.8); /* Warna latar tombol */
+            color: #191970; /* Warna teks tombol */
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        #countdown {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .countdown-item {
+            border: 2px solid #fff;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 50px;
+        }
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #191970;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 20; /* Lebih tinggi dari konten */
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            margin-bottom: 5px;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #home {
+            /* Style untuk home */
+        }
+        #mempelai {
+            background-color: #f0f8ff; /* Light navy */
+        }
+        #acara {
+            /* Style untuk acara */
+        }
+        #rsvp {
+            background-color: #e0e0e0; /* Grey */
+        }
+        #salam {
+            /* Style untuk salam */
+        }
+        .desktop-hero {
+            display: none; /* Sembunyikan default */
+        }
+        @media (min-width: 768px) {
+            #hero {
+                overflow-y: auto; /* Aktifkan scroll di desktop jika perlu */
+            }
+            .navbar {
+                top: 0; /* Pindahkan navbar ke atas di desktop */
+                bottom: auto;
+            }
+            .mobile-hero {
+                display: none; /* Sembunyikan hero mobile di desktop */
+            }
+            .desktop-hero {
+                display: flex;
+                min-height: 100vh;
+            }
+            .desktop-hero-left {
+                width: 75%;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-align: center;
+            }
+            .desktop-hero-right {
+                width: 25%;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hero" class="mobile-hero">
+        <div id="hero-content">
+            <h1 style="font-size: 2.5em; margin-bottom: 10px;">Nama Pengantin</h1>
+            <div>Kepada YTH.</div>
+            <div id="guest-name">Bapak/Ibu/Saudara/i</div>
+            <div>Hari Bahagia Dalam:</div>
+            <div id="countdown">
+                <div class="countdown-item"><span id="days">00</span><br>Hari</div>
+                <div class="countdown-item"><span id="hours">00</span><br>Jam</div>
+                <div class="countdown-item"><span id="minutes">00</span><br>Menit</div>
+                <div class="countdown-item"><span id="seconds">00</span><br>Detik</div>
+            </div>
+            <a href="#home" id="open-invitation">Buka Undangan</a>
+        </div>
+    </div>
+
+    <div class="desktop-hero">
+        <div class="desktop-hero-left" style="background-image: url('path/ke/foto/anda.jpg');">
+            <h1>Nama Pengantin</h1>
+            <div>Kepada YTH.</div>
+            <div id="desktop-guest-name">Bapak/Ibu/Saudara/i</div>
+            <div>Hari Bahagia Dalam:</div>
+            <div id="desktop-countdown">
+                <div class="countdown-item"><span id="d-days">00</span><br>Hari</div>
+                <div class="countdown-item"><span id="d-hours">00</span><br>Jam</div>
+                <div class="countdown-item"><span id="d-minutes">00</span><br>Menit</div>
+                <div class="countdown-item"><span id="d-seconds">00</span><br>Detik</div>
+            </div>
+        </div>
+        <div class="desktop-hero-right">
+            <img src="path/ke/logo-putih.svg" alt="Logo" style="width: 80px; margin-bottom: 20px;">
+            <nav class="desktop-navbar">
+                <a href="#home" class="nav-link" data-section="home"><svg><use xlink:href="#home-icon"/></svg>Home</a>
+                <a href="#mempelai" class="nav-link" data-section="mempelai"><svg><use xlink:href="#ring-icon"/></svg>Mempelai</a>
+                <a href="#acara" class="nav-link" data-section="acara"><svg><use xlink:href="#calendar-icon"/></svg>Acara</a>
+                <a href="#rsvp" class="nav-link" data-section="rsvp"><svg><use xlink:href="#note-icon"/></svg>RSVP & Ucapan</a>
+                <a href="#salam" class="nav-link" data-section="salam"><svg><use xlink:href="#heart-icon"/></svg>Salam</a>
+            </nav>
+        </div>
+    </div>
+
+    <nav class="navbar" id="main-navbar">
+        <a href="#home" class="nav-link" data-section="home"><svg><use xlink:href="#home-icon"/></svg>Home</a>
+        <a href="#mempelai" class="nav-link" data-section="mempelai"><svg><use xlink:href="#ring-icon"/></svg>Mempelai</a>
+        <a href="#acara" class="nav-link" data-section="acara"><svg><use xlink:href="#calendar-icon"/></svg>Acara</a>
+        <a href="#rsvp" class="nav-link" data-section="rsvp"><svg><use xlink:href="#note-icon"/></svg>RSVP & Ucapan</a>
+        <a href="#salam" class="nav-link" data-section="salam"><svg><use xlink:href="#heart-icon"/></svg>Salam</a>
+    </nav>
+
+    <section id="home" class="section">
+        <h2>Selamat Datang</h2>
+        <p>Informasi halaman utama.</p>
+    </section>
+
+    <section id="mempelai" class="section">
+        <h2>Mempelai</h2>
+        <p>Informasi tentang mempelai.</p>
+    </section>
+
+    <section id="acara" class="section">
+        <h2>Acara</h2>
+        <p>Informasi detail acara.</p>
+    </section>
+
+    <section id="lokasi" class="section">
+        <h2>Lokasi</h2>
+        <p>Informasi lokasi acara.</p>
+    </section>
+
+    <section id="galeri" class="section">
+        <h2>Galeri</h2>
+        <p>Foto-foto prewedding atau lainnya.</p>
+    </section>
+
+    <section id="rsvp" class="section">
+        <h2>RSVP & Ucapan</h2>
+        <p>Formulir RSVP dan tempat untuk ucapan.</p>
+    </section>
+
+    <section id="salam" class="section">
+        <h2>Salam</h2>
+        <p>Ucapan penutup.</p>
+    </section>
+
+    <svg style="display: none;">
+        <symbol id="home-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></symbol>
+        <symbol id="ring-icon" viewBox="0 0 24 24"><path d="M19 7v10c0 2.76-2.24 5-5 5s-5-2.24-5-5V7c0-2.76 2.24-5 5-5s5 2.24 5 5zM12 2C9.24 2 7 4.24 7 7v10c0 2.21 1.79 4 4 4s4-1.79 4-4V7c0-2.76-2.24-5-5-5z"/><circle cx="12" cy="9" r="2"/></symbol>
+        <symbol id="calendar-icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-5c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></symbol>
+        <symbol id="note-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm3-10V3.5L18.5 9H13z"/></symbol>
+        <symbol id="heart-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C12.09 5.81 13.76 5 15.5 5 18.58 5 21 7.42 21 10.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
+    </svg>
+
+    <audio id="wedding-music" loop>
+        <source src="path/ke/musik/anda.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
