@@ -4,7 +4,6 @@ if (guestName) {
   document.getElementById('guestName').textContent = guestName;
 }
 
-// Countdown
 const targetDate = new Date("2026-06-03T00:00:00").getTime();
 
 function updateCountdown() {
@@ -24,7 +23,6 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 
-// Action on button
 function openInvitation() {
   window.location.href = "undangan.html?p=" + guestName;
 }
