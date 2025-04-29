@@ -1,9 +1,10 @@
-// Get name from URL
 const urlParams = new URLSearchParams(window.location.search);
-const guestName = urlParams.get('p') || 'Tamu Undangan';
-document.getElementById('guestName').textContent = guestName;
+const guestName = urlParams.get('p');
+if (guestName) {
+  document.getElementById('guestName').textContent = guestName;
+}
 
-// Countdown Timer
+// Countdown
 const targetDate = new Date("2026-06-03T00:00:00").getTime();
 
 function updateCountdown() {
@@ -23,8 +24,7 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 
-// Action for "Buka Undangan"
+// Action on button
 function openInvitation() {
-  // Ganti ke halaman undangan sesungguhnya
   window.location.href = "undangan.html?p=" + guestName;
 }
