@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Kami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-background">
+            <img id="hero-image" src="path/ke/foto/anda.jpg" alt="Foto Anda">
+        </div>
+        <div class="hero-content">
+            <h1 class="nama-pengantin">Nama Pengantin</h1>
+            <p class="yth">Kepada Yth.</p>
+            <p class="nama-tamu">Bapak/Ibu/Saudara/i</p>
+            <p class="hari-bahagia">Hari Bahagia Dalam:</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="hari">00</span>
+                    <span>Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="jam">00</span>
+                    <span>Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="menit">00</span>
+                    <span>Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="detik">00</span>
+                    <span>Detik</span>
+                </div>
+            </div>
+            <button id="buka-undangan" class="button shape">Buka Undangan</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home" class="nav-link active" data-section="home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            Home
+        </a>
+        <a href="#mempelai" class="nav-link" data-section="mempelai">
+            <svg class="nav-icon" viewBox="0 0 48 48" fill="currentColor">
+                <path d="M14 20c-3.3 0-6 2.7-6 6s6 12 6 12 6-9 6-12-2.7-6-6-6zm20 0c-3.3 0-6 2.7-6 6s6 12 6 12 6-9 6-12-2.7-6-6-6zM24 4c-7.7 0-14 6.3-14 14s14 30 14 30 14-16 14-30-6.3-14-14-14z"/>
+            </svg>
+            Mempelai
+        </a>
+        <a href="#acara" class="nav-link" data-section="acara">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-5c-1.66 0-3 1.34-3 3s3 5 3 5 3-2 3-5-1.34-3-3-3zM7 10h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+            </svg>
+            Acara
+        </a>
+        <a href="#rsvp" class="nav-link" data-section="rsvp">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-9 17H5v-3h5v3zm0-4H5v-3h5v3zm0-4H5V6h5v3zm7 11h-5v-3h5v3zm0-4h-5v-3h5v3zm0-4h-5V6h5v3z"/>
+            </svg>
+            RSVP & Ucapan
+        </a>
+        <a href="#salam" class="nav-link" data-section="salam">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.53L12 21.35z"/>
+            </svg>
+            Salam
+        </a>
+    </nav>
+
+    <div id="home" class="section">
+        <h2>Selamat Datang di Acara Pernikahan Kami</h2>
+        <p>Deskripsi singkat tentang acara pernikahan.</p>
+    </div>
+
+    <div id="mempelai" class="section">
+        <h2>Mempelai</h2>
+        <div class="mempelai-detail">
+            <h3>Nama Mempelai Pria</h3>
+            <p>Informasi singkat tentang mempelai pria.</p>
+        </div>
+        <div class="mempelai-detail">
+            <h3>Nama Mempelai Wanita</h3>
+            <p>Informasi singkat tentang mempelai wanita.</p>
+        </div>
+    </div>
+
+    <div id="acara" class="section">
+        <h2>Acara Pernikahan</h2>
+        <div class="acara-detail">
+            <h3>Akad Nikah</h3>
+            <p>Hari, Tanggal, Waktu, Lokasi.</p>
+        </div>
+        <div class="acara-detail">
+            <h3>Resepsi</h3>
+            <p>Hari, Tanggal, Waktu, Lokasi.</p>
+        </div>
+    </div>
+
+    <div id="lokasi" class="section">
+        <h2>Lokasi Acara</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.628980394333!2d106.81513237535328!3d-6.180033493818985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e345bd%3A0x6249bca54c9a2d6c!2sMonas!5e0!3m2!1sid!2sid!4v1682780887993!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="galeri" class="section">
+        <h2>Galeri Foto</h2>
+        <div class="gallery-grid">
+            <img src="https://via.placeholder.com/300" alt="Foto 1">
+            <img src="https://via.placeholder.com/300/0000FF" alt="Foto 2">
+            <img src="https://via.placeholder.com/300/FF0000" alt="Foto 3">
+            </div>
+    </div>
+
+    <div id="rsvp" class="section">
+        <h2>RSVP & Ucapan</h2>
+        <p>Mohon konfirmasi kehadiran Anda dan berikan ucapan selamat kepada kami.</p>
+        <form id="rsvp-form">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br><br>
+            <label for="kehadiran">Kehadiran:</label>
+            <select id="kehadiran" name="kehadiran">
+                <option value="hadir">Hadir</option>
+                <option value="tidak-hadir">Tidak Hadir</option>
+            </select><br><br>
+            <label for="ucapan">Ucapan:</label><br>
+            <textarea id="ucapan" name="ucapan" rows="4" cols="50"></textarea><br><br>
+            <button type="submit" class="button">Kirim RSVP & Ucapan</button>
+        </form>
+        <div id="daftar-ucapan">
+            <h3>Ucapan Selamat</h3>
+            <ul id="list-ucapan">
+                </ul>
+        </div>
+    </div>
+
+    <div id="salam" class="section">
+        <h2>Salam Hangat</h2>
+        <p>Terima kasih atas doa dan restu Anda.</p>
+        <p>Hormat Kami,</p>
+        <p class="nama-pengantin">Nama Pengantin</p>
+    </div>
+
+    <audio id="audio-undangan" loop>
+        <source src="path/ke/musik/anda.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
