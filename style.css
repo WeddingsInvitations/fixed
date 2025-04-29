@@ -18,6 +18,13 @@ html, body {
   color: white;
 }
 
+.couple-name {
+  width: 70%;
+  max-width: 300px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
 .overlay {
   background: rgba(0, 0, 50, 0.4);
   width: 100%;
