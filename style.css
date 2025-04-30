@@ -137,3 +137,47 @@ html, body {
     opacity: 1;
   }
 }
+
+/* Bagian Isi */
+.section {
+  height: 100vh;
+  padding: 60px 20px;
+}
+
+/* Navbar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 2px solid #f7cde6;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.bottom-nav.show {
+  display: flex;
+}
+
+.nav-item {
+  text-align: center;
+  font-size: 12px;
+  color: #cc6699;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.nav-item.active {
+  color: #e75480;
+}
