@@ -56,9 +56,25 @@
             `;
         }
 
-        function openInvitation() {
-            alert("Undangan dibuka!");
-        }
+          <!-- Audio -->
+  <audio id="bg-music" src="audio.mp3" loop></audio>
+
+  <!-- Isi Undangan -->
+  <div id="home" class="section">Home Section</div>
+  <div id="mempelai" class="section">Mempelai Section</div>
+  <div id="acara" class="section">Acara Section</div>
+  <div id="rsvp" class="section">RSVP Section</div>
+  <div id="thanks" class="section">Thanks Section</div>
+
+  <!-- Navbar -->
+  <nav class="bottom-nav" id="navbar">
+    <a href="#home" class="nav-item"><i class="fi fi-rr-home"></i><span>Home</span></a>
+    <a href="#mempelai" class="nav-item"><i class="fi fi-rr-diamond-ring"></i><span>Mempelai</span></a>
+    <a href="#acara" class="nav-item"><i class="fi fi-br-calendar-heart"></i><span>Acara</span></a>
+    <a href="#rsvp" class="nav-item"><i class="fi fi-sr-newsletter-subscribe"></i><span>RSVP</span></a>
+    <a href="#thanks" class="nav-item"><i class="fi fi-sr-hand-holding-heart"></i><span>Thanks</span></a>
+  </nav>
+        
 
         getGuestName();
         updateCountdown();
