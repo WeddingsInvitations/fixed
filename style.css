@@ -24,7 +24,7 @@ html, body {
   margin: 0 auto 25px;
   display: block;
   opacity:0;
-  animation: zoomIn 1s ease-out forwards:
+  animation: zoomIn 1s ease-out forwards;
 }
 
 .overlay {
