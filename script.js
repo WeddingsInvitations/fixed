@@ -46,3 +46,14 @@ window.addEventListener("scroll", () => {
 getGuestName();
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Jika halaman direfresh dan scroll tidak di hero, kembali ke hero
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    setTimeout(() => {
+      window.scrollTo(0, 0); // paksa kembali ke atas (hero)
+      document.body.style.overflow = "hidden"; // nonaktifkan scroll lagi
+      document.getElementById('navbar').classList.remove('show'); // sembunyikan navbar
+    }, 50);
+  }
+});
