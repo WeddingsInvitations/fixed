@@ -24,5 +24,25 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 
 function openInvitation() {
-  window.location.href = "undangan.html?p=" + guestName;
+  document.body.style.overflow = "auto";
+  document.getElementById('navbar').classList.add('show');
+  document.getElementById('bg-music').play();
+  document.getElementById('home').scrollIntoView({ behavior: "smooth" });
 }
+
+// Highlight navbar saat scroll
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll(".section");
+  const navLinks = document.querySelectorAll(".nav-item");
+
+  let index = sections.length;
+
+  while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+  navLinks.forEach((link) => link.classList.remove("active"));
+  navLinks[index].classList.add("active");
+});
+
+getGuestName();
+updateCountdown();
+setInterval(updateCountdown, 1000);
